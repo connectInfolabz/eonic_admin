@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const navigate = useNavigate();
   // const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
     email: "",
@@ -31,7 +29,7 @@ function Login() {
       );
       toast.success("Login Succesfully!!", {
         autoClose: 1500,
-        onClose: () => navigate("/"),
+        onClose: () => window.location.reload(false),
       });
     } catch (error) {
       console.log("Login Err: ", error);
